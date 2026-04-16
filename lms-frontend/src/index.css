@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  /* Theme Variables - Modern Purple Palette */
+  --primary-color: #6366f1;
+  /* Indigo-500 - More vibrant than old purple */
+  --primary-hover: #4f46e5;
+  --secondary-color: #eef2ff;
+  --accent-color: #8b5cf6;
+  /* Violet */
+
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --bg-body: #f8fafc;
+  /* Slate-50 */
+  --bg-surface: #ffffff;
+
+  --border-light: #e2e8f0;
+
+  /* Premium Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-purple: 0 10px 25px -3px rgba(99, 102, 241, 0.25);
+
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.03) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Typography Enhancements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Outfit', sans-serif;
+  color: #0f172a;
+  letter-spacing: -0.015em;
+  /* Slightly looser than before to prevent crash */
+  line-height: 1.25;
+  /* Ensure headings don't overlap vertically */
+  margin-bottom: 0.75rem;
+}
+
+/* Global Utilities */
+.text-purple {
+  color: var(--primary-color) !important;
+}
+
+.bg-purple {
+  background-color: var(--primary-color) !important;
+  color: white;
+}
+
+.bg-purple-light {
+  background-color: var(--secondary-color) !important;
+  color: var(--primary-color);
+}
+
+.btn-purple {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  border: none;
+  font-weight: 500;
+  padding: 0.6rem 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(99, 102, 241, 0.2);
+}
+
+.btn-purple:hover {
+  filter: brightness(110%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn-outline-purple {
+  color: var(--primary-color);
+  border: 1.5px solid var(--primary-color);
+  /* Thinner, more elegant border */
+  background: transparent;
+  font-weight: 600;
+  padding: 0.5rem 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-purple:hover {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.custom-card {
+  background: var(--bg-surface);
+  border: 1px solid #e2e8f0;
+  /* Crisp subtle crisp border */
+  box-shadow: var(--shadow-sm);
+  /* Start with smaller shadow */
+  border-radius: 12px;
+  /* Professional corner radius (12px is standard Modern SaaS) */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.custom-card:hover {
+  border-color: #cbd5e1;
+  /* Darken border on hover */
+  box-shadow: var(--shadow-lg);
+  /* Only pop shadow on hover */
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  /* Subtle lift */
+}
+
+/* Glassmorphism Utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

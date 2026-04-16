@@ -1,0 +1,14 @@
+/* Footer.css */
+.footer {
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.hover-purple:hover {
+  color: var(--primary-color) !important;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer input:focus {
+  box-shadow: none;
+  border-color: var(--primary-color);
+}
